@@ -3,20 +3,20 @@
 /* Designed for WW Recipe Import Compatibility */
 
 :root {
-  /* Ice Cream Parlour Color Palette */
-  --primary: #ff6b9d; /* Strawberry pink */
-  --primary-light: #ffb3d1; /* Light pink */
-  --secondary: #fff5f0; /* Vanilla cream */
+  /* Ice Cream Parlour Color Palette - Vanilla & Caramel */
+  --primary: #d4a574; /* Caramel/toffee */
+  --primary-light: #e8c9a0; /* Light caramel */
+  --secondary: #fff8f0; /* Vanilla cream */
   --accent: #ffa500; /* Orange sherbet */
   --accent-mint: #a8e6cf; /* Mint chip */
-  --accent-chocolate: #d4a574; /* Caramel/chocolate */
+  --accent-chocolate: #8b6f47; /* Dark caramel */
   --text: #2c2c2c; /* Dark text for readability */
   --text-light: #5a5a5a; /* Medium gray */
   --white: #ffffff;
   --bg: #fffef9; /* Soft cream background */
-  --border: #ffe0e8; /* Light pink border */
-  --shadow: rgba(255, 107, 157, 0.15);
-  --shadow-soft: rgba(255, 107, 157, 0.08);
+  --border: #f5e6d3; /* Light caramel border */
+  --shadow: rgba(212, 165, 116, 0.15);
+  --shadow-soft: rgba(212, 165, 116, 0.08);
 }
 
 * {
@@ -41,7 +41,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
   color: var(--white);
   padding: 48px 0;
   text-align: center;
@@ -158,7 +158,7 @@ main {
 
 .recipe-card-image {
   height: 160px;
-  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 25%, #ffa500 50%, #a8e6cf 75%, #ff6b9d 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 25%, #ffa500 50%, #a8e6cf 75%, #d4a574 100%);
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   display: flex;
@@ -248,7 +248,7 @@ main {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #ff6b9d, #ffb3d1, #ffa500, #a8e6cf, #ff6b9d);
+  background: linear-gradient(90deg, #d4a574, #e8c9a0, #ffa500, #a8e6cf, #d4a574);
   background-size: 200% 100%;
   animation: gradientShift 5s linear infinite;
 }
@@ -448,7 +448,7 @@ main {
 
 /* Tips Box */
 .tips-box {
-  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
   color: var(--white);
   border-radius: 20px;
   padding: 24px;
@@ -509,7 +509,7 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
   color: var(--white);
   padding: 32px 0;
   text-align: center;
@@ -551,7 +551,7 @@ footer p {
 }
 
 .badge-icecream {
-  background: linear-gradient(135deg, #ffe0e8, #ffb3d1);
+  background: linear-gradient(135deg, #f5e6d3, #e8c9a0);
   color: var(--primary);
   border: 1px solid var(--primary-light);
 }
