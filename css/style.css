@@ -1,0 +1,449 @@
+/* Ninja Creami Recipe Book - Stylesheet */
+/* Designed for WW Recipe Import Compatibility */
+
+:root {
+  --primary: #2d5a3d;
+  --primary-light: #4a8c65;
+  --secondary: #f4e8d3;
+  --accent: #e07b39;
+  --text: #2c2c2c;
+  --text-light: #5a5a5a;
+  --white: #ffffff;
+  --bg: #faf9f7;
+  --border: #e0ddd8;
+  --shadow: rgba(45, 90, 61, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Header */
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 48px 0;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Navigation */
+nav {
+  background: var(--secondary);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .container {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+/* Main Content */
+main {
+  padding: 48px 0;
+}
+
+/* Recipe Cards Grid */
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.recipe-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px var(--shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--shadow);
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.recipe-card-image {
+  height: 160px;
+  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 3rem;
+}
+
+.recipe-card-content {
+  padding: 20px;
+}
+
+.recipe-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.recipe-card-meta {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.recipe-card-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Category Headers */
+.category-section {
+  margin-bottom: 48px;
+}
+
+.category-section h2 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 8px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--primary);
+}
+
+.category-section > p {
+  color: var(--text-light);
+  margin-bottom: 24px;
+}
+
+/* Individual Recipe Page */
+.recipe-page {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 20px var(--shadow);
+  margin-top: 32px;
+}
+
+.recipe-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+
+.recipe-header h1 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.recipe-header .recipe-description {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-style: italic;
+  max-width: 600px;
+  margin: 0 auto 24px;
+}
+
+.recipe-meta-box {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  background: var(--secondary);
+  padding: 20px 32px;
+  border-radius: 12px;
+}
+
+.meta-item {
+  text-align: center;
+}
+
+.meta-item .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  display: block;
+}
+
+.meta-item .value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* Recipe Sections */
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 700px) {
+  .recipe-content {
+    grid-template-columns: 1fr;
+  }
+  .recipe-page {
+    padding: 24px;
+  }
+}
+
+.recipe-section h2 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Ingredients List */
+.ingredients-list {
+  list-style: none;
+}
+
+.ingredients-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: baseline;
+}
+
+.ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.ingredient-amount {
+  font-weight: 700;
+  color: var(--primary);
+  min-width: 100px;
+}
+
+.ingredient-name {
+  color: var(--text);
+}
+
+/* Instructions */
+.instructions-list {
+  list-style: none;
+  counter-reset: step;
+}
+
+.instructions-list li {
+  position: relative;
+  padding: 16px 0 16px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.instructions-list li:last-child {
+  border-bottom: none;
+}
+
+.instructions-list li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: 32px;
+  height: 32px;
+  background: var(--primary);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Nutrition Box */
+.nutrition-box {
+  background: var(--secondary);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 40px;
+}
+
+.nutrition-box h2 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .nutrition-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.nutrition-item {
+  background: var(--white);
+  padding: 16px 8px;
+  border-radius: 8px;
+}
+
+.nutrition-item .amount {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nutrition-item .nutrient {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+/* Tips Box */
+.tips-box {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: var(--white);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 32px;
+}
+
+.tips-box h3 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.tips-box ul {
+  margin-left: 20px;
+}
+
+.tips-box li {
+  margin-bottom: 8px;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 32px 0;
+  text-align: center;
+  margin-top: 64px;
+}
+
+footer p {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+/* Category badges */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-icecream {
+  background: #e8f4ec;
+  color: var(--primary);
+}
+
+.badge-sorbet {
+  background: #fef3e8;
+  color: var(--accent);
+}
+
+.badge-aussie {
+  background: #e8eef4;
+  color: #2a5082;
+}
+
+/* Print styles for recipes */
+@media print {
+  header, nav, footer, .back-link, .tips-box {
+    display: none;
+  }
+  
+  .recipe-page {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+}
