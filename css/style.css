@@ -1,17 +1,22 @@
 /* Ninja Creami Recipe Book - Stylesheet */
+/* Ice Cream Parlour Theme 🍦 */
 /* Designed for WW Recipe Import Compatibility */
 
 :root {
-  --primary: #2d5a3d;
-  --primary-light: #4a8c65;
-  --secondary: #f4e8d3;
-  --accent: #e07b39;
-  --text: #2c2c2c;
-  --text-light: #5a5a5a;
+  /* Ice Cream Parlour Color Palette */
+  --primary: #ff6b9d; /* Strawberry pink */
+  --primary-light: #ffb3d1; /* Light pink */
+  --secondary: #fff5f0; /* Vanilla cream */
+  --accent: #ffa500; /* Orange sherbet */
+  --accent-mint: #a8e6cf; /* Mint chip */
+  --accent-chocolate: #d4a574; /* Caramel/chocolate */
+  --text: #3d2f2f; /* Warm dark brown */
+  --text-light: #8b6f6f; /* Soft brown */
   --white: #ffffff;
-  --bg: #faf9f7;
-  --border: #e0ddd8;
-  --shadow: rgba(45, 90, 61, 0.08);
+  --bg: #fffef9; /* Soft cream background */
+  --border: #ffe0e8; /* Light pink border */
+  --shadow: rgba(255, 107, 157, 0.15);
+  --shadow-soft: rgba(255, 107, 157, 0.08);
 }
 
 * {
@@ -22,7 +27,8 @@
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
-  background: var(--bg);
+  background: linear-gradient(180deg, #fffef9 0%, #fff5f0 100%);
+  background-attachment: fixed;
   color: var(--text);
   line-height: 1.7;
   font-size: 17px;
@@ -36,33 +42,60 @@ body {
 
 /* Header */
 header {
-  background: var(--primary);
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
   color: var(--white);
   padding: 48px 0;
   text-align: center;
+  box-shadow: 0 4px 20px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: float 20s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(30px, 30px); }
 }
 
 header h1 {
   font-size: 2.5rem;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-weight: 600;
+  letter-spacing: 2px;
   margin-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 header p {
   font-size: 1.1rem;
-  opacity: 0.9;
+  opacity: 0.95;
   font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 /* Navigation */
 nav {
-  background: var(--secondary);
+  background: var(--white);
   padding: 16px 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 3px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 100;
+  box-shadow: 0 2px 10px var(--shadow-soft);
 }
 
 nav .container {
@@ -77,11 +110,17 @@ nav a {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
-  transition: color 0.2s;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  position: relative;
 }
 
 nav a:hover {
-  color: var(--accent);
+  color: var(--white);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow);
 }
 
 /* Main Content */
@@ -99,15 +138,17 @@ main {
 
 .recipe-card {
   background: var(--white);
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 2px 12px var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  transition: all 0.3s ease;
+  border: 2px solid var(--border);
 }
 
 .recipe-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px var(--shadow);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 32px var(--shadow);
+  border-color: var(--primary-light);
 }
 
 .recipe-card a {
@@ -118,12 +159,31 @@ main {
 
 .recipe-card-image {
   height: 160px;
-  background: linear-gradient(135deg, var(--primary-light), var(--primary));
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 25%, #ffa500 50%, #a8e6cf 75%, #ff6b9d 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.recipe-card-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 .recipe-card-content {
@@ -160,7 +220,9 @@ main {
   color: var(--primary);
   margin-bottom: 8px;
   padding-bottom: 12px;
-  border-bottom: 2px solid var(--primary);
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-mint)) 1;
+  position: relative;
 }
 
 .category-section > p {
@@ -171,10 +233,25 @@ main {
 /* Individual Recipe Page */
 .recipe-page {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 24px;
   padding: 48px;
-  box-shadow: 0 4px 20px var(--shadow);
+  box-shadow: 0 8px 32px var(--shadow-soft);
   margin-top: 32px;
+  border: 2px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ff6b9d, #ffb3d1, #ffa500, #a8e6cf, #ff6b9d);
+  background-size: 200% 100%;
+  animation: gradientShift 5s linear infinite;
 }
 
 .recipe-header {
@@ -186,8 +263,12 @@ main {
 
 .recipe-header h1 {
   font-size: 2.2rem;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 16px;
+  font-weight: 700;
 }
 
 .recipe-header .recipe-description {
@@ -203,9 +284,11 @@ main {
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
-  background: var(--secondary);
+  background: linear-gradient(135deg, #fff5f0, #ffe0e8);
   padding: 20px 32px;
-  border-radius: 12px;
+  border-radius: 20px;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow-soft);
 }
 
 .meta-item {
@@ -223,7 +306,10 @@ main {
 .meta-item .value {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Recipe Sections */
@@ -247,7 +333,8 @@ main {
   color: var(--primary);
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 3px solid;
+  border-image: linear-gradient(90deg, var(--primary), var(--accent-mint)) 1;
 }
 
 /* Ingredients List */
@@ -268,7 +355,10 @@ main {
 
 .ingredient-amount {
   font-weight: 700;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   min-width: 100px;
 }
 
@@ -298,9 +388,9 @@ main {
   position: absolute;
   left: 0;
   top: 16px;
-  width: 32px;
-  height: 32px;
-  background: var(--primary);
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -308,14 +398,18 @@ main {
   justify-content: center;
   font-weight: 700;
   font-size: 0.9rem;
+  box-shadow: 0 2px 8px var(--shadow);
+  border: 2px solid var(--white);
 }
 
 /* Nutrition Box */
 .nutrition-box {
-  background: var(--secondary);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #fff5f0, #ffe0e8);
+  border-radius: 20px;
   padding: 24px;
   margin-top: 40px;
+  border: 2px solid var(--border);
+  box-shadow: 0 4px 16px var(--shadow-soft);
 }
 
 .nutrition-box h2 {
@@ -341,13 +435,24 @@ main {
 .nutrition-item {
   background: var(--white);
   padding: 16px 8px;
-  border-radius: 8px;
+  border-radius: 16px;
+  border: 2px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nutrition-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px var(--shadow-soft);
+  border-color: var(--primary-light);
 }
 
 .nutrition-item .amount {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .nutrition-item .nutrient {
@@ -357,16 +462,40 @@ main {
 
 /* Tips Box */
 .tips-box {
-  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
   color: var(--white);
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 24px;
   margin-top: 32px;
+  box-shadow: 0 6px 20px var(--shadow);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.tips-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: float 15s linear infinite;
 }
 
 .tips-box h3 {
   font-size: 1.1rem;
   margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.tips-box ul {
+  position: relative;
+  z-index: 1;
 }
 
 .tips-box ul {
@@ -394,16 +523,34 @@ main {
 
 /* Footer */
 footer {
-  background: var(--primary);
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffb3d1 50%, #ffa500 100%);
   color: var(--white);
   padding: 32px 0;
   text-align: center;
   margin-top: 64px;
+  box-shadow: 0 -4px 20px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: float 20s linear infinite reverse;
 }
 
 footer p {
-  opacity: 0.8;
+  opacity: 0.95;
   font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 /* Category badges */
@@ -418,18 +565,21 @@ footer p {
 }
 
 .badge-icecream {
-  background: #e8f4ec;
+  background: linear-gradient(135deg, #ffe0e8, #ffb3d1);
   color: var(--primary);
+  border: 1px solid var(--primary-light);
 }
 
 .badge-sorbet {
-  background: #fef3e8;
+  background: linear-gradient(135deg, #fff5f0, #ffe0e8);
   color: var(--accent);
+  border: 1px solid var(--accent);
 }
 
 .badge-aussie {
-  background: #e8eef4;
+  background: linear-gradient(135deg, #a8e6cf, #d4f4e8);
   color: #2a5082;
+  border: 1px solid var(--accent-mint);
 }
 
 /* Print styles for recipes */
