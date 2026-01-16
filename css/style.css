@@ -10,8 +10,8 @@
   --accent: #ffa500; /* Orange sherbet */
   --accent-mint: #a8e6cf; /* Mint chip */
   --accent-chocolate: #d4a574; /* Caramel/chocolate */
-  --text: #3d2f2f; /* Warm dark brown */
-  --text-light: #8b6f6f; /* Soft brown */
+  --text: #2c2c2c; /* Dark text for readability */
+  --text-light: #5a5a5a; /* Medium gray */
   --white: #ffffff;
   --bg: #fffef9; /* Soft cream background */
   --border: #ffe0e8; /* Light pink border */
@@ -27,8 +27,7 @@
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
-  background: linear-gradient(180deg, #fffef9 0%, #fff5f0 100%);
-  background-attachment: fixed;
+  background: #fffef9;
   color: var(--text);
   line-height: 1.7;
   font-size: 17px;
@@ -188,6 +187,7 @@ main {
 
 .recipe-card-content {
   padding: 20px;
+  background: var(--white);
 }
 
 .recipe-card h3 {
@@ -220,8 +220,7 @@ main {
   color: var(--primary);
   margin-bottom: 8px;
   padding-bottom: 12px;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(90deg, var(--primary), var(--accent), var(--accent-mint)) 1;
+  border-bottom: 3px solid var(--primary);
   position: relative;
 }
 
@@ -263,10 +262,7 @@ main {
 
 .recipe-header h1 {
   font-size: 2.2rem;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
   margin-bottom: 16px;
   font-weight: 700;
 }
@@ -284,7 +280,7 @@ main {
   justify-content: center;
   gap: 32px;
   flex-wrap: wrap;
-  background: linear-gradient(135deg, #fff5f0, #ffe0e8);
+  background: var(--white);
   padding: 20px 32px;
   border-radius: 20px;
   border: 2px solid var(--border);
@@ -306,10 +302,7 @@ main {
 .meta-item .value {
   font-size: 1.4rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 /* Recipe Sections */
@@ -333,8 +326,7 @@ main {
   color: var(--primary);
   margin-bottom: 16px;
   padding-bottom: 8px;
-  border-bottom: 3px solid;
-  border-image: linear-gradient(90deg, var(--primary), var(--accent-mint)) 1;
+  border-bottom: 2px solid var(--accent);
 }
 
 /* Ingredients List */
@@ -355,10 +347,7 @@ main {
 
 .ingredient-amount {
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
   min-width: 100px;
 }
 
@@ -404,7 +393,7 @@ main {
 
 /* Nutrition Box */
 .nutrition-box {
-  background: linear-gradient(135deg, #fff5f0, #ffe0e8);
+  background: var(--white);
   border-radius: 20px;
   padding: 24px;
   margin-top: 40px;
@@ -449,10 +438,7 @@ main {
 .nutrition-item .amount {
   font-size: 1.5rem;
   font-weight: 700;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--primary);
 }
 
 .nutrition-item .nutrient {
