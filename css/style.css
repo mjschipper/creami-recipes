@@ -3,20 +3,20 @@
 /* Designed for WW Recipe Import Compatibility */
 
 :root {
-  /* Ice Cream Parlour Color Palette - Vanilla & Caramel */
-  --primary: #d4a574; /* Caramel/toffee */
-  --primary-light: #e8c9a0; /* Light caramel */
-  --secondary: #fff8f0; /* Vanilla cream */
-  --accent: #ffa500; /* Orange sherbet */
-  --accent-mint: #a8e6cf; /* Mint chip */
-  --accent-chocolate: #8b6f47; /* Dark caramel */
-  --text: #2c2c2c; /* Dark text for readability */
-  --text-light: #5a5a5a; /* Medium gray */
+  /* Classic Ice Cream Parlour Color Palette */
+  --primary: #7fb3a3; /* Soft mint green */
+  --primary-light: #a8d5c7; /* Light mint */
+  --secondary: #faf8f3; /* Warm cream */
+  --accent: #c9a882; /* Soft caramel */
+  --accent-mint: #b8d4c8; /* Pale mint */
+  --accent-chocolate: #8b7355; /* Warm brown */
+  --text: #3d3d3d; /* Soft dark gray */
+  --text-light: #6b6b6b; /* Medium gray */
   --white: #ffffff;
-  --bg: #fffef9; /* Soft cream background */
-  --border: #f5e6d3; /* Light caramel border */
-  --shadow: rgba(212, 165, 116, 0.15);
-  --shadow-soft: rgba(212, 165, 116, 0.08);
+  --bg: #fefcf8; /* Warm off-white */
+  --border: #e8e0d6; /* Soft beige border */
+  --shadow: rgba(127, 179, 163, 0.12);
+  --shadow-soft: rgba(127, 179, 163, 0.06);
 }
 
 * {
@@ -41,7 +41,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #7fb3a3 0%, #a8d5c7 50%, #b8d4c8 100%);
   color: var(--white);
   padding: 48px 0;
   text-align: center;
@@ -57,9 +57,9 @@ header::before {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: float 20s linear infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: float 25s linear infinite;
 }
 
 @keyframes float {
@@ -158,15 +158,15 @@ main {
 
 .recipe-card-image {
   height: 160px;
-  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 25%, #ffa500 50%, #a8e6cf 75%, #d4a574 100%);
+  background: linear-gradient(135deg, #7fb3a3 0%, #a8d5c7 30%, #b8d4c8 60%, #c9a882 100%);
   background-size: 200% 200%;
-  animation: gradientShift 8s ease infinite;
+  animation: gradientShift 10s ease infinite;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   font-size: 3rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
   position: relative;
 }
 
@@ -247,10 +247,10 @@ main {
   top: 0;
   left: 0;
   right: 0;
-  height: 6px;
-  background: linear-gradient(90deg, #d4a574, #e8c9a0, #ffa500, #a8e6cf, #d4a574);
+  height: 4px;
+  background: linear-gradient(90deg, #7fb3a3, #a8d5c7, #b8d4c8, #c9a882, #7fb3a3);
   background-size: 200% 100%;
-  animation: gradientShift 5s linear infinite;
+  animation: gradientShift 8s linear infinite;
 }
 
 .recipe-header {
@@ -448,13 +448,13 @@ main {
 
 /* Tips Box */
 .tips-box {
-  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #7fb3a3 0%, #a8d5c7 50%, #b8d4c8 100%);
   color: var(--white);
   border-radius: 20px;
   padding: 24px;
   margin-top: 32px;
-  box-shadow: 0 6px 20px var(--shadow);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -466,9 +466,9 @@ main {
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 40px 40px;
-  animation: float 15s linear infinite;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 45px 45px;
+  animation: float 20s linear infinite;
 }
 
 .tips-box h3 {
@@ -509,7 +509,7 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #d4a574 0%, #e8c9a0 50%, #ffa500 100%);
+  background: linear-gradient(135deg, #7fb3a3 0%, #a8d5c7 50%, #b8d4c8 100%);
   color: var(--white);
   padding: 32px 0;
   text-align: center;
@@ -526,9 +526,9 @@ footer::before {
   right: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 30px 30px;
-  animation: float 20s linear infinite reverse;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: float 25s linear infinite reverse;
 }
 
 footer p {
@@ -551,7 +551,7 @@ footer p {
 }
 
 .badge-icecream {
-  background: linear-gradient(135deg, #f5e6d3, #e8c9a0);
+  background: linear-gradient(135deg, #e8f0ed, #d4e6df);
   color: var(--primary);
   border: 1px solid var(--primary-light);
 }
