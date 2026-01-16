@@ -3,20 +3,20 @@
 /* Designed for WW Recipe Import Compatibility */
 
 :root {
-  /* Retro Ice Cream Parlour Color Palette - Pastel Pink & Teal */
-  --primary: #ff9ec5; /* Pastel pink */
-  --primary-light: #ffc4dd; /* Light pink */
+  /* Ice Cream Parlour Theme - Higher Contrast, Nutrition-Forward */
+  --primary: #c5567a; /* Deeper berry */
+  --primary-light: #f2b3c9; /* Soft pink for accents */
   --secondary: #ffffff; /* Pure white */
-  --accent: #7dd3c0; /* Light teal/cyan */
+  --accent: #2f8f7b; /* Deeper teal for contrast */
   --accent-mint: #a8e6cf; /* Soft mint */
-  --accent-chocolate: #d4a574; /* Soft caramel */
+  --accent-chocolate: #c58a5a; /* Caramel */
   --text: #1f1f1f; /* Dark gray for better readability */
   --text-light: #4a4a4a; /* Medium-dark gray for better contrast */
   --white: #ffffff;
   --bg: #fffef9; /* Bright white with slight cream */
-  --border: #ffe0e8; /* Very light pink border */
-  --shadow: rgba(255, 158, 197, 0.15);
-  --shadow-soft: rgba(255, 158, 197, 0.08);
+  --border: #f3d2dc; /* Soft pink border */
+  --shadow: rgba(197, 86, 122, 0.18);
+  --shadow-soft: rgba(197, 86, 122, 0.1);
 }
 
 * {
@@ -41,7 +41,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(135deg, #ff9ec5 0%, #ffc4dd 40%, #7dd3c0 100%);
+  background: linear-gradient(135deg, #c5567a 0%, #f2b3c9 45%, #2f8f7b 100%);
   color: var(--white);
   padding: 48px 0;
   text-align: center;
@@ -105,7 +105,7 @@ nav .container {
 }
 
 nav a {
-  color: var(--primary);
+  color: var(--text);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 600;
@@ -158,7 +158,7 @@ main {
 
 .recipe-card-image {
   height: 160px;
-  background: linear-gradient(135deg, #ff9ec5 0%, #ffc4dd 30%, #7dd3c0 60%, #a8e6cf 100%);
+  background: linear-gradient(135deg, #c5567a 0%, #f2b3c9 35%, #2f8f7b 65%, #a8e6cf 100%);
   background-size: 200% 200%;
   animation: gradientShift 8s ease infinite;
   display: flex;
@@ -217,7 +217,7 @@ main {
 
 .category-section h2 {
   font-size: 1.8rem;
-  color: var(--primary);
+  color: var(--text);
   margin-bottom: 8px;
   padding-bottom: 12px;
   border-bottom: 3px solid var(--primary);
@@ -248,7 +248,7 @@ main {
   left: 0;
   right: 0;
   height: 5px;
-  background: linear-gradient(90deg, #ff9ec5, #ffc4dd, #7dd3c0, #a8e6cf, #ff9ec5);
+  background: linear-gradient(90deg, #c5567a, #f2b3c9, #2f8f7b, #a8e6cf, #c5567a);
   background-size: 200% 100%;
   animation: gradientShift 6s linear infinite;
 }
@@ -302,7 +302,7 @@ main {
 .meta-item .value {
   font-size: 1.4rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text);
 }
 
 /* Recipe Sections */
@@ -438,7 +438,7 @@ main {
 .nutrition-item .amount {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text);
 }
 
 .nutrition-item .nutrient {
@@ -448,7 +448,7 @@ main {
 
 /* Tips Box */
 .tips-box {
-  background: linear-gradient(135deg, #ff9ec5 0%, #ffc4dd 50%, #7dd3c0 100%);
+  background: linear-gradient(135deg, #c5567a 0%, #f2b3c9 50%, #2f8f7b 100%);
   color: var(--white);
   border-radius: 16px;
   padding: 24px;
@@ -497,7 +497,7 @@ main {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--primary);
+  color: var(--text);
   text-decoration: none;
   font-weight: 600;
   margin-bottom: 24px;
@@ -509,7 +509,7 @@ main {
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #ff9ec5 0%, #ffc4dd 50%, #7dd3c0 100%);
+  background: linear-gradient(135deg, #c5567a 0%, #f2b3c9 50%, #2f8f7b 100%);
   color: var(--white);
   padding: 32px 0;
   text-align: center;
