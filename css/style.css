@@ -10,8 +10,8 @@
   --accent: #7dd3c0; /* Light teal/cyan */
   --accent-mint: #a8e6cf; /* Soft mint */
   --accent-chocolate: #d4a574; /* Soft caramel */
-  --text: #3d3d3d; /* Soft dark gray */
-  --text-light: #6b6b6b; /* Medium gray */
+  --text: #1f1f1f; /* Dark gray for better readability */
+  --text-light: #4a4a4a; /* Medium-dark gray for better contrast */
   --white: #ffffff;
   --bg: #fffef9; /* Bright white with slight cream */
   --border: #ffe0e8; /* Very light pink border */
